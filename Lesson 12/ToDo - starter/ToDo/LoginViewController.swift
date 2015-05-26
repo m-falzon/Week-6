@@ -80,7 +80,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             setLoginFormState(false)
             authDataManager.processLogin(emailTextField.text, password:passwordTextField.text) { (result) -> Void in
                 if(result) {
-                    self.displayMessage("Successfully logged in!")
+                    self.performSegueWithIdentifier("segueToDoListFormLogin", sender: self)
                 }
                 else {
                     self.displayMessage("Sorry, a matching email and/or password was not found in our system.")
